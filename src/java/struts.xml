@@ -1,0 +1,61 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.multipart.maxSize" value="1000000" />
+
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="upload" class="com.serv.uploadFile">
+            <result name="success">Add_assign.jsp</result>
+            <result name="error">admin.jsp</result>
+        </action>
+        <action name="login" class="com.serv.LoggedIn">
+        <result name="admin">/admin.jsp</result>
+<result name="teacher">/teacher.jsp</result>
+<result name="student">/student.jsp</result>
+<result name="Fail">/index.html</result>
+    </action>
+    <action name="doubt" class="com.serv.Doubt">
+        <result name="Success">/discussion_s.jsp</result>
+    </action>
+     <action name="discussion" class="com.serv.Disc">
+        <result name="Success">/show_disc.jsp</result>
+    </action>
+    <action name="newdiscussions" class="com.serv.Disc">
+        <result name="Success">/show_disc_s.jsp</result>
+    </action>
+    <action name="newdiscussiont" class="com.serv.Disc">
+        <result name="Success">/show_disc_t.jsp</result>
+    </action>
+   <action name="deleteq" class="com.serv.deleteq">
+        <result name="Success">/show_disc.jsp</result>
+    </action>
+   
+    <action name="Editcrs" class="com.serv.Editcrs">
+        <result name="Success">/view_crs.jsp</result>
+    </action> 
+    <action name="Editbr" class="com.serv.Editbr">
+        <result name="Success">/view_br_a.jsp</result>
+    </action> 
+    <action name="announce" class="com.serv.Announce">
+        <result name="Success">/add_announce.jsp</result>
+    </action> 
+    <action name="addcourse" class="com.serv.Addcrs">
+        <result name="Success">/view_crs.jsp</result>
+    </action> 
+     <action name="signup" class="com.serv.SignedUp">
+        <result name="student">/student.jsp</result>
+        <result name="teacher">/teacher.jsp</result>
+    </action>
+    <action name="solve" class="com.serv.Solve">
+        <result name="Success">/discussion.jsp</result>
+    </action>
+    <action name="passchange" class="com.serv.changepass">
+        <result name="Success">/logout.jsp</result>
+    </action>
+    </package>
+</struts>
